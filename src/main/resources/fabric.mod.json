@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "strongholdfinder",
   "version": "${version}",
 
-  "name": "Example Mod",
+  "name": "Stronghold Finder",
   "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
-    "Me!"
+    "Goby56"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
@@ -19,11 +19,11 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "com.goby56.strongholdfinder.StrongholdFinder"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "strongholdfinder.mixins.json"
   ],
 
   "depends": {
