@@ -3,7 +3,7 @@ package com.goby56.strongholdfinder.commands;
 import com.goby56.strongholdfinder.utils.PlayerEntityDataCache;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.context.CommandContext;
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.NbtDouble;
 import net.minecraft.nbt.NbtList;
@@ -19,9 +19,10 @@ public class LogPosition {
         dispatcher.register(CommandManager.literal("logpos").executes(LogPosition::logPos));
     }
 
-    public static int logPos(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
-        PlayerEntityDataCache playerData = (PlayerEntityDataCache)context.getSource().getPlayer();
-        Entity player = context.getSource().getPlayer();
+    public static int logPos(CommandContext<ServerCommandSource> serverCommandSourceCommandContext) {
+        PlayerEntityDataCache playerData = (PlayerEntityDataCache)MinecraftClient.getInstance().player;
+        Entity player = MinecraftClient.getInstance().player;
+        //Entity player = context.getSource().getPlayer(); if multiplayer <ServerCommandSource>
         var valuesArray = new NbtList();
 
         valuesArray.add(NbtDouble.of(player.getX()));
@@ -39,11 +40,11 @@ public class LogPosition {
             int z = strongholdPosition[1];
 
             playerData.getPlayerData().remove("SfPrevPos");
-            context.getSource().sendFeedback(new LiteralText("Stronghold located at x=" + x + ", z=" + z + ". Clearing log..."), true);
+            serverCommandSourceCommandContext.getSource().sendFeedback(new LiteralText("Stronghold located at x=" + x + ", z=" + z + ". Clearing log..."), false);
         }
         else {
             playerData.getPlayerData().put("SfPrevPos", valuesArray);
-            context.getSource().sendFeedback(new LiteralText("Logged position. Provide second location..."), true);
+            serverCommandSourceCommandContext.getSource().sendFeedback(new LiteralText("Logged position. Provide second location..."), false);
         }
         return 1;
     }
