@@ -1,30 +1,21 @@
 package com.goby56.strongholdfinder.commands;
 
 import com.goby56.strongholdfinder.utils.PlayerEntityDataCache;
-import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.context.CommandContext;
-import net.fabricmc.fabric.api.client.command.v1.ClientCommandManager;
 import net.fabricmc.fabric.api.client.command.v1.FabricClientCommandSource;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.NbtDouble;
 import net.minecraft.nbt.NbtList;
-import net.minecraft.server.command.CommandManager;
-import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.LiteralText;
-import net.fabricmc.fabric.api.util.NbtType; //NbtType Constants!!!!
+import net.fabricmc.fabric.api.util.NbtType;
 
 import static com.goby56.strongholdfinder.math.StrongholdPosition.triangulatePosition;
 
 public class LogPosition {
-    public static void register(CommandDispatcher<FabricClientCommandSource> dispatcher) {
-        dispatcher.register(ClientCommandManager.literal("logpos").executes(LogPosition::logPos));
-    }
-
     public static int logPos(CommandContext<FabricClientCommandSource> context) {
         PlayerEntityDataCache playerData = (PlayerEntityDataCache)MinecraftClient.getInstance().player;
         Entity player = MinecraftClient.getInstance().player;
-        //Entity player = context.getSource().getPlayer(); if multiplayer <ServerCommandSource>
         var valuesArray = new NbtList();
 
         valuesArray.add(NbtDouble.of(player.getX()));
