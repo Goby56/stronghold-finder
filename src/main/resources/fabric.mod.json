@@ -4,17 +4,17 @@
   "version": "${version}",
 
   "name": "Stronghold Finder",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "A lightweight client sided Minecraft mod for finding strongholds.",
   "authors": [
     "Goby56"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/stronghold-finder",
+    "sources": "https://github.com/Goby56/stronghold-finder"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "license": "GPLv3",
+  "icon": "assets/strongholdfinder/icon.png",
 
   "environment": "*",
   "entrypoints": {
@@ -29,7 +29,7 @@
   "depends": {
     "fabricloader": ">=0.11.3",
     "fabric": "*",
-    "minecraft": "1.18.x",
+    "minecraft": "1.17.x",
     "java": ">=17"
   },
   "suggests": {
