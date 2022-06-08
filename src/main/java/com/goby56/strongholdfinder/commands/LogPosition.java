@@ -2,13 +2,14 @@ package com.goby56.strongholdfinder.commands;
 
 import com.goby56.strongholdfinder.utils.PlayerEntityDataCache;
 import com.mojang.brigadier.context.CommandContext;
-import net.fabricmc.fabric.api.client.command.v1.FabricClientCommandSource;
+import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.NbtDouble;
 import net.minecraft.nbt.NbtList;
-import net.minecraft.text.LiteralText;
+import net.minecraft.text.LiteralTextContent;
 import net.fabricmc.fabric.api.util.NbtType;
+import net.minecraft.text.Text;
 
 import static com.goby56.strongholdfinder.math.StrongholdPosition.triangulatePosition;
 
@@ -33,11 +34,11 @@ public class LogPosition {
             int z = strongholdPosition[1];
 
             playerData.getPlayerData().remove("SfPrevPos");
-            context.getSource().sendFeedback(new LiteralText("Stronghold located at x=" + x + ", z=" + z + ". Clearing log..."));
+            context.getSource().sendFeedback(Text.of("Stronghold located at x=" + x + ", z=" + z + ". Clearing log..."));
         }
         else {
             playerData.getPlayerData().put("SfPrevPos", valuesArray);
-            context.getSource().sendFeedback(new LiteralText("Logged position. Provide second location..."));
+            context.getSource().sendFeedback(Text.of("Logged position. Provide second location..."));
         }
         return 1;
     }
