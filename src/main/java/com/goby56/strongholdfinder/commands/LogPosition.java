@@ -7,7 +7,6 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.NbtDouble;
 import net.minecraft.nbt.NbtList;
-import net.minecraft.text.LiteralTextContent;
 import net.fabricmc.fabric.api.util.NbtType;
 import net.minecraft.text.Text;
 

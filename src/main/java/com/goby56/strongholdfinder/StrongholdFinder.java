@@ -19,6 +19,20 @@ public class StrongholdFinder implements ClientModInitializer {
 
 		CommandRegister.registerCommand();
 
+		/**
+		 * Take a look at this
+		 * https://fabricmc.net/wiki/tutorial:events
+		 *
+		 * Try this for raycasting
+		 * https://fabricmc.net/wiki/tutorial:pixel_raycast
+		 *
+		 * This could be good for raycasting
+		 * https://github.com/ToroCraft/ToroHealth/blob/master/src/main/java/net/torocraft/torohealth/util/RayTrace.java
+		 */
+
+
+		//EventListener.EMPTY.addListener(new GameEventListener() );
+
 		LOGGER.info("Hello Fabric world!");
 	}
 }
