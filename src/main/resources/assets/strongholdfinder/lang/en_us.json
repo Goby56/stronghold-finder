@@ -1,0 +1,4 @@
+{
+  "triangulate.stronghold.throw1": "First throw registered. Provide the second location...",
+  "triangulate.stronghold.throw2": "Second throw registered. Stronghold found at %s (%s blocks away)"
+}
