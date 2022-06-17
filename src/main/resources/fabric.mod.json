@@ -4,16 +4,16 @@
   "version": "${version}",
 
   "name": "Stronghold Finder",
-  "description": "This mod helps the player with locating the Stronghold using trigonometry. Try typing /logpos in chat while looking exactly at the Eye of Ender. Perform this action 2 times.",
+  "description": "This mod triangulates the stronghold location.",
   "authors": [
     "Goby56"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/stronghold-finder",
+    "sources": "https://github.com/Goby56/stronghold-finder"
   },
 
-  "license": "CC0-1.0",
+  "license": "GNU General Public License",
   "icon": "assets/strongholdfinder/icon.png",
 
   "environment": "*",
