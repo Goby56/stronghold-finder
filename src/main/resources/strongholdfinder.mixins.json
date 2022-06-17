@@ -4,11 +4,10 @@
   "package": "com.goby56.strongholdfinder.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
-    "PlayerEntityDataRetriever",
+    "ThrowDataRetriever",
     "EyeThrownMixin"
   ],
   "client": [
-    "StrongholdFinderMixin"
   ],
   "injectors": {
     "defaultRequire": 1
