@@ -1,7 +1,9 @@
 package com.goby56.strongholdfinder;
 
-import com.goby56.strongholdfinder.utils.CommandRegister;
+import com.goby56.strongholdfinder.utils.EntityRaycaster;
+import com.goby56.strongholdfinder.utils.NbtHandler;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -17,22 +19,7 @@ public class StrongholdFinder implements ClientModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		CommandRegister.registerCommand();
-
-		/**
-		 * Take a look at this
-		 * https://fabricmc.net/wiki/tutorial:events
-		 *
-		 * Try this for raycasting
-		 * https://fabricmc.net/wiki/tutorial:pixel_raycast
-		 *
-		 * This could be good for raycasting
-		 * https://github.com/ToroCraft/ToroHealth/blob/master/src/main/java/net/torocraft/torohealth/util/RayTrace.java
-		 */
-
-
-		//EventListener.EMPTY.addListener(new GameEventListener() );
-
-		LOGGER.info("Hello Fabric world!");
+		ClientTickEvents.END_CLIENT_TICK.register(EntityRaycaster::tick);
+		ClientTickEvents.END_CLIENT_TICK.register(NbtHandler::tick);
 	}
 }
