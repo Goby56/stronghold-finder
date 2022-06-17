@@ -14,8 +14,6 @@ public class EntityRaycaster {
 
     private static Predicate<Entity> predicate = entity -> !entity.isSpectator();
 
-    private static PlayerEntity player = MinecraftClient.getInstance().player;
-
     public static EntityHitResult raycast(PlayerEntity player) {
         double reach = 60;
         Vec3d position = player.getCameraPosVec(0);
