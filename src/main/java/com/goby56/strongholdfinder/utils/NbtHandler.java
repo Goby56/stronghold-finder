@@ -33,7 +33,7 @@ public class NbtHandler {
             return;
         }
 
-        player.sendMessage(Text.translatable("triangulate.stronghold.throw1"));
+        player.sendMessage(new TranslatableText("triangulate.stronghold.throw1"), false);
 
         var data = new NbtList();
 
@@ -55,8 +55,8 @@ public class NbtHandler {
         int x = strongholdPosition[0];
         int z = strongholdPosition[1];
         int distance = getDistance(player.getBlockPos(), strongholdPosition);
-        MutableText text = Texts.bracketed(Text.translatable("chat.coordinates", x, "~", z)).styled(style -> style.withColor(Formatting.GREEN).withClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/tp @s " + x + " " + "~" + " " + z)).withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, Text.translatable("chat.coordinates.tooltip"))));
-        player.sendMessage(Text.translatable("triangulate.stronghold.throw2", text, distance));
+        MutableText text = Texts.bracketed(new TranslatableText("chat.coordinates", x, "~", z)).styled(style -> style.withColor(Formatting.GREEN).withClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/tp @s " + x + " " + "~" + " " + z)).withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new TranslatableText("chat.coordinates.tooltip"))));
+        player.sendMessage(new TranslatableText("triangulate.stronghold.throw2", text, distance), false);
     }
 
     public static int value = -1;
