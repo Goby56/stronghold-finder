@@ -1,5 +1,6 @@
-package com.goby56.strongholdfinder.utils;
+package com.goby56.strongholdfinder.com.goby56.strongholdfinder.utils;
 
+import com.goby56.strongholdfinder.utils.ThrowDataInterface;
 import net.fabricmc.fabric.api.util.NbtType;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
